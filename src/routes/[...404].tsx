@@ -1,22 +1,31 @@
-import Icon from "../components/Icon";
-import UpdateTab from "../Tab";
-import { onMount } from "solid-js";
+import { A } from "solid-start";
 
 export default function NotFound() {
-  onMount(() => {
-    UpdateTab();
-  });
-
   return (
-    <div class="bg-gray-900 text-gray-100 flex flex-col justify-center items-center">
-      <main class="py-40 w-full flex flex-col justify-center items-center">
-        <div class="bg-gray-900 max-w-2xl p-5 flex flex-col justify-center items-center">
-          <h1 class="text-center text-4xl">404 - Page Not Found</h1>
-          <a href="/" class="m-5 w-max flex text-center text-gray-100 bg-sky-500 p-4 hover:bg-sky-400 rounded-full transition-colors shadow-lg">
-            <Icon name="home" style="margin-top: 0.3em;" />&nbsp; Return Home!
-          </a>
-        </div>
-      </main>
-    </div>
+    <main class="text-center mx-auto text-gray-700 p-4">
+      <h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">
+        Not Found
+      </h1>
+      <p class="mt-8">
+        Visit{" "}
+        <a
+          href="https://solidjs.com"
+          target="_blank"
+          class="text-sky-600 hover:underline"
+        >
+          solidjs.com
+        </a>{" "}
+        to learn how to build Solid apps.
+      </p>
+      <p class="my-4">
+        <A href="/" class="text-sky-600 hover:underline">
+          Home
+        </A>
+        {" - "}
+        <A href="/about" class="text-sky-600 hover:underline">
+          About Page
+        </A>
+      </p>
+    </main>
   );
 }
